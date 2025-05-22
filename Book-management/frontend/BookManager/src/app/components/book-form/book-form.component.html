@@ -1,0 +1,21 @@
+<h4>{{ book.id === 0 ? '' : '' }}</h4>
+<form (ngSubmit)="onSubmit()">
+  <label>Title:
+    <input [(ngModel)]="formData.title" name="title" required>
+  </label><br>
+
+  <label>Author:
+    <input [(ngModel)]="formData.author" name="author" required>
+  </label><br>
+
+  <label>ISBN:
+    <input [(ngModel)]="formData.isbn" name="isbn" required>
+  </label><br>
+
+  <label>Publication Date:
+    <input type="date" [(ngModel)]="formData.publicationDate" name="publicationDate" required>
+  </label><br>
+
+  <button type="submit">{{ book.id === 0 ? 'Add' : 'Update' }}</button>
+  <button type="button" (click)="onCancel()">Cancel</button>
+</form>

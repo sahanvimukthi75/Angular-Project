@@ -1,0 +1,25 @@
+# .NET build artifacts
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+.vs/
+bin/
+obj/
+*.db
+*.pdb
+
+# ASP.NET
+appsettings.Development.json
+
+# Node / Angular build artifacts
+node_modules/
+dist/
+
+# Logs
+*.log
+
+# Others
+*.DS_Store
+.env

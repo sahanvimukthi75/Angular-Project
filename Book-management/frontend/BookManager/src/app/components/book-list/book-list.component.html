@@ -1,0 +1,24 @@
+<button (click)="addNewBook()">Add New Book</button>
+
+<app-book-form 
+  *ngIf="selectedBook"
+  [book]="selectedBook" 
+  (submitted)="onFormSubmit($event)" 
+  (cancelled)="onCancel()">
+</app-book-form>
+
+<hr>
+<div class="book-list">
+<h2>Book List</h2>
+<ul *ngIf="books.length > 0; else noBooks">
+  <li *ngFor="let book of books">
+    <strong>{{ book.title }}</strong> by {{ book.author }} (ISBN: {{ book.isbn }})
+    <button (click)="editBook(book)">Edit</button>
+    <button (click)="deleteBook(book.id)">Delete</button>
+  </li>
+</ul>
+</div>
+
+<ng-template #noBooks>
+  <p>books are not available.</p>
+</ng-template>
