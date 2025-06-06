@@ -1,7 +1,8 @@
+/* Your existing styles below... */
+
 h2 {
   color: #2c3e50;
   margin-bottom: 1rem;
-  
 }
 
 button {
@@ -110,3 +111,25 @@ app-book-form {
   background-color: #2980b9;
 }
 
+/* New styles for donut chart sidebar */
+.donut-chart-sidebar {
+  position: fixed;
+  top: 100px;  /* adjust vertical position */
+  right: 20px;  /* distance from right edge */
+  width: 300px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  z-index: 1000;
+}
+
+.donut-chart-sidebar h3 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.donut-chart-sidebar canvas {
+  width: 100% !important;
+  height: auto !important;
+}

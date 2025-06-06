@@ -1,0 +1,49 @@
+<div class="dashboard-layout">
+  <app-sidebar></app-sidebar>
+
+  <div class="main-area">
+    <app-topbar></app-topbar>
+
+    <div class="dashboard-cards">
+      <!-- Delayed Orders -->
+      <div class="card delayed-orders">
+        <h3>Delayed Orders</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Order No</th>
+              <th>Product</th>
+              <th>Due Date</th>
+              <th>Days Late</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let order of orders">
+              <td>{{order.orderNo}}</td>
+              <td>{{order.product}}</td>
+              <td>{{order.due}}</td>
+              <td>{{order.daysLate}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Bank Accounts -->
+      <div class="card bank-accounts">
+        <h3>Bank Accounts</h3>
+        <ul>
+          <li *ngFor="let acc of accounts">
+            {{acc.name}} - {{acc.amount | currency:'AED'}}
+            <small>{{acc.updated}}</small>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Donut Chart -->
+      <div class="card expenses">
+        <h3>Expenses</h3>
+        <app-donut-chart></app-donut-chart>
+      </div>
+    </div>
+  </div>
+</div>
